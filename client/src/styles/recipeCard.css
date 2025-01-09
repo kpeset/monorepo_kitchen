@@ -1,0 +1,40 @@
+article {
+  background-color: aliceblue;
+  display: flex;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+article > .left > img {
+  height: 8rem;
+  width: 8rem;
+  object-fit: cover;
+}
+
+article > .left > h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+article > .right > div > a {
+  text-decoration: none;
+  color: aliceblue;
+  background-color: black;
+  padding: 1rem 2rem;
+}
+
+article > .right {
+  width: 100%;
+}
+
+article > .right > p {
+  margin-bottom: 2rem;
+}
+
+article > .right > div {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}

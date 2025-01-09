@@ -1,0 +1,19 @@
+nav {
+  background-color: aliceblue;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav > ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1rem;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
