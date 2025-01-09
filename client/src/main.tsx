@@ -9,13 +9,18 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
 
 import About from "./pages/About.tsx";
+import Categories from "./pages/Categories.tsx";
+import CategoryDetails from "./pages/CategoryDetails.tsx";
 import ErrorPage from "./pages/ErrorPage.tsx";
 import Home from "./pages/Home.tsx";
 import RecipeDetails from "./pages/RecipeDetails.tsx";
-import Recipes from "./pages/Recipes.tsx";
 
 // Import services
-import { getAllRecipes, getRecipeDetails } from "./services/requests.ts";
+import {
+  getCategories,
+  getMealsByCategory,
+  getRecipeDetails,
+} from "./services/requests.ts";
 
 // Import CSS
 import "./styles/app.css";
@@ -36,16 +41,22 @@ const router = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
-      {
-        path: "/recipes",
-        element: <Recipes />,
-        loader: getAllRecipes,
-      },
+
       {
         path: "/recipes/:id",
         element: <RecipeDetails />,
-        loader: ({ params }) => getRecipeDetails(Number(params.id)),
+        loader: ({ params }) => getRecipeDetails(String(params.id)),
         errorElement: <ErrorPage />,
+      },
+      {
+        path: "/categories",
+        element: <Categories />,
+        loader: getCategories,
+      },
+      {
+        path: "/categories/:name",
+        element: <CategoryDetails />,
+        loader: ({ params }) => getMealsByCategory(String(params.name)),
       },
     ],
   },

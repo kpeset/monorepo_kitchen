@@ -3,10 +3,9 @@ import { useLoaderData } from "react-router-dom";
 import RecipeCard from "../components/RecipeCard";
 
 interface RecipeTypes {
-  id: number;
-  name: string;
-  description: string;
-  picture: string;
+  strMealThumb: string;
+  strMeal: string;
+  idMeal: string;
 }
 
 export default function Recipes() {
@@ -16,7 +15,7 @@ export default function Recipes() {
     <>
       <h1>Nos recettes</h1>
       {recipes.map((recipe) => (
-        <RecipeCard key={recipe.id} recipe={recipe} />
+        <RecipeCard key={recipe.idMeal} recipe={recipe} />
       ))}
     </>
   );

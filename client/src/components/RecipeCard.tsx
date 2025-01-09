@@ -4,10 +4,9 @@ import "../styles/recipeCard.css";
 
 interface RecipeTypes {
   recipe: {
-    name: string;
-    picture: string;
-    description: string;
-    id: number;
+    strMealThumb: string;
+    strMeal: string;
+    idMeal: string;
   };
 }
 
@@ -15,13 +14,12 @@ export default function RecipeCard({ recipe }: RecipeTypes) {
   return (
     <article>
       <div className="left">
-        <h2>{recipe.name}</h2>
-        <img src={recipe.picture} alt={recipe.description} />
+        <h2>{recipe.strMeal}</h2>
+        <img src={recipe.strMealThumb} alt={recipe.strMeal} />
       </div>
       <div className="right">
-        <p>{recipe.description}</p>
         <div>
-          <Link to={`/recipes/${recipe.id}`}>VOIR RECETTE</Link>
+          <Link to={`/recipes/${recipe.idMeal}`}>VOIR RECETTE</Link>
         </div>
       </div>
     </article>

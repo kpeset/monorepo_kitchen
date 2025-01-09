@@ -19,7 +19,6 @@ export default function RandomRecipeCard({ recipe }: RandomRecipeTypes) {
         <img src={recipe.strMealThumb} alt="plat" />
       </div>
       <div className="right">
-        <p>{recipe.strArea}</p>
         <div>
           <Link to={`/recipes/${recipe.idMeal}`}>VOIR RECETTE</Link>
         </div>

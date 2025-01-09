@@ -1,9 +1,9 @@
 import { useLoaderData } from "react-router-dom";
 
 interface recipeTypes {
-  name: string;
-  picture: string;
-  description: string;
+  strMeal: string;
+  strMealThumb: string;
+  strInstructions: string;
 }
 
 export default function RecipeDetails() {
@@ -11,9 +11,9 @@ export default function RecipeDetails() {
 
   return (
     <>
-      <h1>{recipe.name}</h1>
-      <img src={recipe.picture} alt={recipe.name} />
-      <p>{recipe.description}</p>
+      <h1>{recipe.strMeal}</h1>
+      <img src={recipe.strMealThumb} alt="" />
+      <p>{recipe.strInstructions}</p>
     </>
   );
 }
