@@ -12,9 +12,6 @@ export default function Header() {
           <Link to="/recipes">Les recettes</Link>
         </li>
         <li>
-          <Link to="/categories">Les catégories</Link>
-        </li>
-        <li>
           <Link to="/about">A propos</Link>
         </li>
       </ul>
