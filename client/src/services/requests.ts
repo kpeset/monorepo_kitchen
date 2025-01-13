@@ -21,4 +21,11 @@ const getMealsByCategory = (category: string) => {
     .catch((error) => console.error(error));
 };
 
-export { getRecipeDetails, getCategories, getMealsByCategory };
+const searchMeal = (meal: string) => {
+  return axios
+    .get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${meal}`)
+    .then((response) => response.data.meals)
+    .catch((error) => console.error(error));
+};
+
+export { getRecipeDetails, getCategories, getMealsByCategory, searchMeal };

@@ -14,12 +14,14 @@ import CategoryDetails from "./pages/CategoryDetails.tsx";
 import ErrorPage from "./pages/ErrorPage.tsx";
 import Home from "./pages/Home.tsx";
 import RecipeDetails from "./pages/RecipeDetails.tsx";
+import Search from "./pages/Search.tsx";
 
 // Import services
 import {
   getCategories,
   getMealsByCategory,
   getRecipeDetails,
+  searchMeal,
 } from "./services/requests.ts";
 
 // Import CSS
@@ -41,7 +43,6 @@ const router = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
-
       {
         path: "/recipes/:id",
         element: <RecipeDetails />,
@@ -57,6 +58,11 @@ const router = createBrowserRouter([
         path: "/categories/:name",
         element: <CategoryDetails />,
         loader: ({ params }) => getMealsByCategory(String(params.name)),
+      },
+      {
+        path: "/search/:meal",
+        element: <Search />,
+        loader: ({ params }) => searchMeal(String(params.meal)),
       },
     ],
   },

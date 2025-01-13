@@ -1,6 +1,24 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Header() {
+  const [formSearch, setFormSearch] = useState("");
+
+  const navigate = useNavigate();
+
+  const sendSearchForm = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    navigate(`/search/${formSearch}`);
+  };
+
+  const handleChangeSearchForm = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    setFormSearch(event.currentTarget.value);
+  };
+
+  console.info(formSearch);
+
   return (
     <nav>
       <h1>LOGO DU SITE</h1>
@@ -16,6 +34,14 @@ export default function Header() {
           <Link to="/about">A propos</Link>
         </li>
       </ul>
+      <form onSubmit={sendSearchForm}>
+        <input
+          type="text"
+          placeholder="Cherchez une recette..."
+          onChange={handleChangeSearchForm}
+        />
+        <input type="submit" />
+      </form>
     </nav>
   );
 }
