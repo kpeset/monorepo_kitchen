@@ -36,6 +36,7 @@ export default function Header() {
       </ul>
       <form onSubmit={sendSearchForm}>
         <input
+          value={formSearch}
           type="text"
           placeholder="Cherchez une recette..."
           onChange={handleChangeSearchForm}
