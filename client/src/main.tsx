@@ -2,6 +2,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { DarkThemeProvider } from "./services/DarkThemeContext.tsx";
 
 /* ************************************************************************* */
 
@@ -77,6 +78,8 @@ if (rootElement == null) {
 
 createRoot(rootElement).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <DarkThemeProvider>
+      <RouterProvider router={router} />
+    </DarkThemeProvider>
   </StrictMode>,
 );

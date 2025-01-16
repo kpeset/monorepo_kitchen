@@ -11,3 +11,31 @@ main {
   padding: 2rem;
   min-height: 88vh;
 }
+
+.dark {
+  --root-background-color: black;
+  --nav-background-color: rgb(0, 52, 98);
+  --nav-font-color: white;
+  --main-font-color: white;
+  --card-background-color: rgb(65, 65, 65);
+}
+
+.light {
+  --root-background-color: white;
+  --nav-background-color: aliceblue;
+  --nav-font-color: black;
+  --main-font-color: black;
+  --card-background-color: aliceblue;
+}
+
+#root {
+  background-color: var(--root-background-color);
+}
+
+main {
+  color: var(--main-font-color);
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 88vh;
+}

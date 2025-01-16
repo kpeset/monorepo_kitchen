@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import { useDarkTheme } from "../services/DarkThemeContext";
+
 export default function Header() {
   const [formSearch, setFormSearch] = useState("");
+
+  const { darkTheme, setDarkTheme } = useDarkTheme();
+
+  console.info(darkTheme);
 
   const navigate = useNavigate();
 
@@ -17,7 +23,9 @@ export default function Header() {
     setFormSearch(event.currentTarget.value);
   };
 
-  console.info(formSearch);
+  const switchMode = () => {
+    setDarkTheme(!darkTheme);
+  };
 
   return (
     <nav>
@@ -26,7 +34,6 @@ export default function Header() {
         <li>
           <Link to="/">Accueil</Link>
         </li>
-
         <li>
           <Link to="/categories">Les catégories</Link>
         </li>
@@ -43,6 +50,9 @@ export default function Header() {
         />
         <input type="submit" />
       </form>
+      <button type="button" onClick={switchMode}>
+        Light/Dark
+      </button>
     </nav>
   );
 }
