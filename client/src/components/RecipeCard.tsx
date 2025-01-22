@@ -2,15 +2,7 @@ import { Link } from "react-router-dom";
 
 import "../styles/recipeCard.css";
 
-interface RecipeTypes {
-  recipe: {
-    strMealThumb: string;
-    strMeal: string;
-    idMeal: string;
-  };
-}
-
-export default function RecipeCard({ recipe }: RecipeTypes) {
+export default function RecipeCard({ recipe }: RecipeProps) {
   return (
     <article>
       <div className="left">

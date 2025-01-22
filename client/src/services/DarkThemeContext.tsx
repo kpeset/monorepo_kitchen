@@ -3,13 +3,13 @@ import type { ReactNode } from "react";
 
 // Créer le context
 
-interface MyContextProps {
-  children: ReactNode;
-}
-
 interface DarkThemeProps {
   darkTheme: boolean;
   setDarkTheme: (darkTheme: boolean) => void;
+}
+
+interface MyContextProps {
+  children: ReactNode;
 }
 
 const darkThemeContext = createContext(null as null | DarkThemeProps);

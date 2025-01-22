@@ -2,16 +2,7 @@ import { Link } from "react-router-dom";
 
 import "../styles/recipeCard.css";
 
-interface RandomRecipeTypes {
-  recipe: {
-    strMeal: string;
-    strMealThumb: string;
-    strArea: string;
-    idMeal: string;
-  };
-}
-
-export default function RandomRecipeCard({ recipe }: RandomRecipeTypes) {
+export default function RandomRecipeCard({ recipe }: RecipeProps) {
   return (
     <article>
       <div className="left">

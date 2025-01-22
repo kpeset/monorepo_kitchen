@@ -1,16 +1,6 @@
 import { Link } from "react-router-dom";
 
-interface CategoryTypes {
-  category: {
-    strCategory: string;
-    strCategoryDescription: string;
-    strCategoryThumb: string;
-  };
-}
-
-export default function CategoryCard({ category }: CategoryTypes) {
-  console.info(category);
-
+export default function CategoryCard({ category }: CategoryProps) {
   return (
     <article>
       <h2>{category.strCategory}</h2>

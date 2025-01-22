@@ -1,13 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 
-interface recipeTypes {
-  strMeal: string;
-  strMealThumb: string;
-  strInstructions: string;
-}
-
 export default function RecipeDetails() {
-  const recipe = useLoaderData() as recipeTypes;
+  const recipe = useLoaderData() as RecipeTypes;
 
   return (
     <>

@@ -2,17 +2,9 @@ import { useLoaderData, useParams } from "react-router-dom";
 
 import RecipeCard from "../components/RecipeCard";
 
-interface RecipeTypes {
-  idMeal: string;
-  strMealThumb: string;
-  strMeal: string;
-}
-
 export default function Search() {
   const results = useLoaderData() as RecipeTypes[];
   const { meal } = useParams();
-
-  console.info(meal);
 
   if (!results) {
     return <h1>Pas de résultats pour {meal}</h1>;

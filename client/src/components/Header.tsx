@@ -8,8 +8,6 @@ export default function Header() {
 
   const { darkTheme, setDarkTheme } = useDarkTheme();
 
-  console.info(darkTheme);
-
   const navigate = useNavigate();
 
   const sendSearchForm = (event: React.FormEvent<HTMLFormElement>) => {

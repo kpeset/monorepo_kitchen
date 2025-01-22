@@ -4,15 +4,8 @@ import { useEffect, useState } from "react";
 
 import RandomRecipeCard from "../components/RandomRecipeCard";
 
-interface RandomRecipeTypes {
-  strMeal: string;
-  strMealThumb: string;
-  strArea: string;
-  idMeal: string;
-}
-
 export default function Home() {
-  const [data, setData] = useState({} as RandomRecipeTypes);
+  const [data, setData] = useState({} as RecipeTypes);
 
   useEffect(() => {
     axios

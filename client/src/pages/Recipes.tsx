@@ -2,12 +2,6 @@ import { useLoaderData } from "react-router-dom";
 
 import RecipeCard from "../components/RecipeCard";
 
-interface RecipeTypes {
-  strMealThumb: string;
-  strMeal: string;
-  idMeal: string;
-}
-
 export default function Recipes() {
   const recipes = useLoaderData() as RecipeTypes[];
 
